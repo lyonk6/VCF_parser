@@ -1,0 +1,94 @@
+The 1000Genomes browser can be found at: browser.1000genomes.org. 
+Please refer to the 1000genomes faq located at: www.1000genomes.org/faq/
+
+About the 1000 Genomes Project:
+The primary data is located at
+    ftp.1000genomes.ebi.ac.uk/vol1/ftp/data/
+The complete current ftp tree is located at:
+    ftp.1000genomes.ebi.ac.uk/vol1/ftp/current.tree
+
+Only 85% of the genome is accessable with the short read technology used by the 1000
+genomes project. The other 15% repeat DNA that is diffucult to align to. See the 
+'callability mask' for more information on these regions:
+ftp.1000genomes.ebi.ac.uk/vol1/ftp/pilot_data/release/2010_03/pilot1/supporting/README_callability_masks 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1000 Genomes Project phases:
+So far there are three phases of the 1000 Genomes project: pilot phase, phase 1 and 
+phase 2. The pilot phase focuses on "exon targeted" sequences of 1000 genes in ~700 
+individuals. Phase 1 of the project represents low-coverage and exome focused data 
+for 1092 people. Phase 2 expands phase 1 to 1700 samples. Finally phase3 consists of 
+2500 people including 6 high coverage, ~792  "exon targeted" , ~1572 exome and ~1463
+low coverage samples. 
+
+Variant calls for phase1 are available but there are not likely to be any variant 
+calls for phase 2 since work on the phase 3 call sets is already underway.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mapping:
+The pilot project was mapped to NCBI36. Phase 1 of the 1000genomes project used GRCh37 
+(which is what we used for the SchillerLab pilot project) as the reference sequence. 
+Phase 2 will still be mapped to GRCh37. Please see the folowing url for more details:
+      goto:  www.1000genomes.org/faq/which-reference-assembly-do-you-us
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Phase 1 variant calls:
+All variants in the vcf file are contained on the forward strand. 
+Because of the difficulty of downloading and processing 1000+ genomes and the newly
+available preprocessed variant files we decided it would be best to simply download
+the variant files instead of doing snp calling on downloaded genomes from the 
+project.
+
+The final variant call sets for the 1000genomes phase1 release can be found at:
+ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/analysis_results/integrated_call_sets/
+
+An equivalent directory is:
+ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521
+
+Exome pull down tagets for phase 1 & 2:
+Index of /vol1/ftp/technical/reference/exome_pull_down_targets_phases1_and_2/
+The exome pull down targets identify 705301 SNP locations in 16072 genes at 20x 
+coverage. The median quality score for variants in the pull down region is 0.778
+and the average score is 0.750.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dbsnp data:
+ftp.ncbi.nih.gov:/snp/organisms/human_9606/rs_fasta/ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fetching the data:
+This data was retrieved using the program: fetch_integrated_call_sets.pl. 
+Note that the line below specifies the same location as the url shown above and
+this IS the data that was used for the summer 2013 1000genomes minimotif analysis.
+ 
+$c = " fasp-g1k\@fasp.1000genomes.ebi.ac.uk:/vol1/ftp/phase1/analysis_results/integrated_call_sets/  ";
+The following perl programs were used:
+fetch_supporting.pl
+fetch_ancestral_deconvolution.pl  
+fetch_integrated_call_sets.pl
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Processing the phase 1 integrated call sets.
+The integrated call sets are an as-is opinion on what the genotypes of 1092 people 
+are. This data does not need any processing or filtering based on quality scores, as 
+this is how several others have used it (see PMID: 24092746). This, however, was not
+my understanding in eary 2013 when the pipeline was being built. 
+
+MISC notes:
+The pilot project snps have been accessioned by dbSNP and are available in dbSNP 132.
+VQSR - the variant recallibration utility that is part of the gatk engine.
+OMNI -Organized Medical Network Information.
+There is about 130TB of raw data accessable for the 1000genomes project as of jan 2013.
+The interim results that we cannot use are located at:
+ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20101123/interim_phase1_release/

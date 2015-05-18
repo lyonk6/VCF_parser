@@ -1,0 +1,1 @@
+java -Xms2G -Xmx2G -XX:+UseParallelGC -XX:+UseParallelOldGC -cp "../../bin/" zygosity_evaluator.PopulationDataStructure \

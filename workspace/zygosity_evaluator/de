@@ -1,0 +1,52 @@
+#CHROM POS HG01515 HG01516 HG01518 HG01519 HG01521 HG01522 HG01617 HG01618 HG01619 HG01620 HG01623 HG01624 HG01625 HG01626
+
+22 16050408  4 homozygous ref matches, 10 heterozygous ones
+0|0
+0|0
+0|1
+0|1
+0|0
+0|0
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+22 16052239  2 homozyogus reference, 4 heterozygotes and 8 other
+0|0
+0|0
+0|1
+0|1
+0|1
+0|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+
+22 16059952 all homozygous reference.
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+chrmo position het_count het_fraction hom_count hom_fraction
+22 16050408 10 0.7142857142857143 4 0.2857142857142857
+22 16052239 4 0.2857142857142857 2 0.14285714285714285
+22 16059952 0 0.0 14 1.0

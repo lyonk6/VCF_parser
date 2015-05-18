@@ -1,0 +1,77 @@
+ZygosityEvaluator involves two classes: ZygosityEvaluator and PopulationDataStructure.
+Main in PopulationDataStructure is suitable for testing PopulationDataStructure. To test
+the ZygosityEvaluator, we will analyze, by hand, the zygosity of the IBS population in 
+100.vcf. 
+
+The indices of the IBS people are: 
+395  396  397  398  399  400  403  404  405  406  407  408  409  410  
+So we will use awk to separate these values and evaluate the heterozygous and homozygous 
+counts by hand.
+
+
+tail -1 100.vcf | awk '{print NF}'
+answer is:  1101
+
+
+1101-1092 = 9 -> adjusted indicies are x+9
+So the adjusted indices are: 
+$404, $405, $406, $407, $408, $409, $412, $413, $414, $415, $416, $417, $418, $419
+ 
+Get the pertinent VCF columns.
+    awk -F\\t '{print $1, $2, $405, $406, $407, $408, $409, $410, $413, $414, $415, $416, $417, $418, $419, $420}' 100.vcf > VCF_for_IBS
+
+Get the pertinent output records, they are HomozygousRefMatchCount, HomozygousRefFraction, HeterozygousCount, HeterozygousFraction 
+    awk -F\` '{print $1, $2, $47, $48, $49, $50}' formatted_table > IBS_only_formatted_table
+
+#CHROM POS HG01515 HG01516 HG01518 HG01519 HG01521 HG01522 HG01617 HG01618 HG01619 HG01620 HG01623 HG01624 HG01625 HG01626
+###########################################
+22 16050408  4 homozygous ref matches, 10 heterozygous ones
+0|0
+0|0
+0|1
+0|1
+0|0
+0|0
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+0|1
+22 16052239  2 homozyogus reference, 4 heterozygotes and 8 other
+0|0
+0|0
+0|1
+0|1
+0|1
+0|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+1|1
+
+22 16059952 all homozygous reference.
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+0|0
+chrom position het_count het_fraction hom_count hom_fraction
+22 	16050408 	10 	0.7142857142857143 4 0.2857142857142857
+22 	16052239 	4 	0.2857142857142857 2 0.14285714285714285
+22 	16059952 	0 	0.0 14 1.0

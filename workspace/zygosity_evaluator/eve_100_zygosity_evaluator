@@ -1,0 +1,4 @@
+java -Xms2G -Xmx2G -XX:+UseParallelGC -XX:+UseParallelOldGC -cp "../../bin/" zygosity_evaluator.EvaluateZygosity \
+100.vcf \
+output_2013_05_04_all_snp_people.txt \
+formatted_table

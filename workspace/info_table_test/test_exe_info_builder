@@ -1,0 +1,3 @@
+java -Xms2G -Xmx2G -XX:+UseParallelGC -XX:+UseParallelOldGC  -cp "../../bin/" InfoTableBuilder \
+first_20_chrom22 \
+formatted_info
