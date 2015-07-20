@@ -1,6 +1,6 @@
 ZygosityEvaluator involves two classes: ZygosityEvaluator and PopulationDataStructure.
 Main in PopulationDataStructure is suitable for testing PopulationDataStructure. To test
-the ZygosityEvaluator, we will analyze, by hand, the zygosity of the IBS population in 
+the ZygosityEvaluator we will analyze (by hand) the zygosity of the IBS population in 
 100.vcf. 
 
 The indices of the IBS people are: 
