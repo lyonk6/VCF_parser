@@ -1,4 +1,4 @@
-package populationZygosityRetriever:
+package populationZygosityRetriever;
 
 import java.util.ArrayList;
 import java.util.HashMap;

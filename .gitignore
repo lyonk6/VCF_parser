@@ -1,0 +1,13 @@
+#!/bin/bash                                                                                                                                                                                             
+# Do not push/pull bin/ workspace/ or data/                                                                                                                                                             
+*bin/
+*workspace/
+*data/
+*~
+# exclude hidden R data files.                                                                                                                                                                          
+*.Rhistory
+*.RData
+# exclude hidden osx data files.                                                                                                                                                                        
+.DS_Store
+temp
+.~lock.*
