@@ -21,7 +21,7 @@ those that follow specify genotypes of multiple samples(people). The format fiel
 the format of the genotype data. Below is a sample record and header.
 
 
-#CHROM   POS   ID   REF   ALT   QUAL   FILTER   INFO    FORMAT  <SAMPLE_NAME_1> <SAMPLE_NAME_2>
+\#CHROM   POS   ID   REF   ALT   QUAL   FILTER   INFO    FORMAT  <SAMPLE_NAME_1> <SAMPLE_NAME_2>
 22      16050408        rs149201999     T       C       100     PASS    <info>  GT:DS:GL        0|0:0.050:-0.03,-1.17,-5.00
 <info> = LDAF=0.0649;RSQ=0.8652;AN=2184;ERATE=0.0046;VT=SNP;AA=.;AVGPOST=0.9799;THETA=0.0149;SNPSOURCE=LOWCOV;AC=134;AF=0.06;ASN_AF=0.04;AMR_AF=0.05;AFR_AF=0.10;EUR_AF=0.06
 
